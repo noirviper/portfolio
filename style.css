@@ -9,7 +9,10 @@ a {color: black; text-decoration: none;}
 header,
 section {border: 2px solid black;}
 
-section {width: 100%; margin: 10px auto;}
+section {
+  background: lightgray;
+  width: 100%; margin: 10px auto;}
+section:nth-child(even) {background: darkgray;}
 
 header {
   background: white;
