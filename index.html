@@ -1,12 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
+    <meta name="description" content="My name is Ryan and I am a web developer">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <header role="banner">
+      <nav>
+        <a href="#heroContainer">TOP</a>
+        <a href="#portfolioContainer">PORTFOLIO</a>
+        <a href="#aboutContainer">ABOUT</a>
+      </nav>
+    </header>
+    <main role="main">
+      <section id="heroContainer">
+        <h1>Hello, I'm Ryan </h1>
+        <h2>and I am a Full Stack web developer</h2>
+        <div class="links-container">
+          <div class="icon"><a href="#"><i class="fab fa-linkedin"></i></a></div>
+          <div class="icon"><a href="#"><i class="fab fa-github-square"></i></a></div>
+          <div class="icon"><a href="#"><i class="fab fa-codepen"></i></a></div>
+          <div class="icon"><a href="#"><i class="fas fa-envelope"></i></a></div>
+          <div class="icon"><a href="#"><i class="fas fa-phone-square-alt"></i></a></div>
+        </div>
+      </section>
+      <section id="portfolioContainer">
+        <h2>PORTFOLIO SECTION</h2>
+        <div class="projects">
+          <div class="project">
+            <img src="" alt="project img">
+            <div class="project-info">
+            <p>Project description</p>
+            <a href="#" target="_blank">Live link</a>
+            <a href="#" target="_blank">Code link</a>
+            </div>
+          </div>
+          <div class="project">
+            <img src="" alt="project img">
+            <div class="project-info">
+            <p>Project description</p>
+            <a href="#" target="_blank">Live link</a>
+            <a href="#" target="_blank">Code link</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="aboutContainer">
+        <div class="bio-pic">
+          <img src="" alt="cool pic of Ryan">
+        </div>
+        <div class="bio">
+          <h2>ABOUT SECTION</h2>
+          <p>This is my bio</p>
+        </div>
+        
+      </section>
+      <footer>
+        <p class="copyright">&copy;2020 Ryan Johnson</p>
+      </footer>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

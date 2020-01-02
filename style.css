@@ -1,0 +1,105 @@
+
+* {box-sizing: border-box;}
+body,html {
+  position: relative;
+  box-sizing: inherit;
+  overflow-x: hidden;
+}
+a {color: black; text-decoration: none;}
+header,
+section {border: 2px solid black;}
+
+section {width: 100%; margin: 10px auto;}
+
+header {
+  background: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+#heroContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  min-height: 400px;
+}
+#heroContainer h1 {margin-bottom: 0;}
+.links-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+}
+
+#portfolioContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 10px auto;
+}
+.project-info {text-align: center; margin: 0 auto;}
+.project img {
+  border: 1px solid black;
+  width: 100%;
+  padding: 25px;
+}
+
+#aboutContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  text-align: center;
+}
+.bio {border: 1px solid black;}
+.bio-pic {
+  border: 1px solid black;
+  padding: 50px;
+  max-width: 400px;
+  margin: 10px auto;
+  }
+
+footer {text-align: center; padding-bottom: 30px}
+  @media (min-width: 500px)  {
+    header {top: 0; bottom: unset}
+    .projects,
+    #aboutContainer {flex-direction: row;}
+    .bio,.bio-pic {width: 50%}
+    footer {padding-bottom: 0}
+
+  }
+
+  @media (min-width: 768px) {
+    
+    .projects {flex-direction: column;}
+    .project {
+      flex-direction: row;
+      width: 100%;
+    }
+    .project:nth-child(even){
+      flex-direction: row-reverse;
+    }
+    .project img {width: 50%}
+  }
