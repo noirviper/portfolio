@@ -38,6 +38,7 @@ header {
   left: 0;
   width: 100%;
   box-shadow: 0 0 5px black;
+  z-index: 5;
 }
 
 nav {
