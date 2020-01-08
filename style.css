@@ -1,25 +1,43 @@
-
-* {box-sizing: border-box;}
+* {box-sizing: border-box; font-size: 16px}
 body,html {
   position: relative;
   box-sizing: inherit;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
+
+body {background-color: #010A26}
+h1,h2,h3,h4,h5,h6 {font-family: 'Proza Libre', sans-serif; color: #00279E; text-align: center;}
+h2 {font-size: 1.4rem;}
+p {text-align: left;}
+p,a {font-family: 'Open Sans', sans-serif;}
 a {color: black; text-decoration: none;}
-header,
-section {border: 2px solid black;}
+.fab,.fas {font-size: 1.3rem; transition: color 0.4s linear}
+.fa-linkedin,
+.fa-github-square,
+.fa-codepen,
+.fa-envelope {color: white;}
+.fa-linkedin:hover {color: #0077b5;}
+.fa-github-square:hover {color: #31c754;}
+.fa-codepen:hover {color: #b268de;}
+.fa-envelope:hover {color: #c04338}
 
 section {
-  background: lightgray;
-  width: 100%; margin: 10px auto;}
-section:nth-child(even) {background: darkgray;}
+  background: white;
+  width: 100%;
+  max-width: 1000px;
+  margin: 25px auto; 
+  border-radius: 5px;
+  padding: 10px}
+
 
 header {
-  background: white;
+  background: #4f86c8;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  box-shadow: 0 0 5px black;
 }
 
 nav {
@@ -27,6 +45,13 @@ nav {
   justify-content: space-evenly;
   padding: 10px;
 }
+nav a {
+  color: white; 
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: color 0.4s linear;
+  }
+nav a:hover {color: #010A26}
 
 #heroContainer {
   display: flex;
@@ -39,13 +64,32 @@ nav {
   width: 100%;
   height: 100vh;
   min-height: 400px;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  -webkit-animation: gradientBG 10s ease infinite;
+	animation: gradientBG 10s ease infinite;
+  background-size: 400% 400%;
 }
-#heroContainer h1 {margin-bottom: 0;}
+ 
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#heroContainer h1 {color:white; margin-bottom: 0; font-size: 2rem}
+#heroContainer h2 {color: white;}
 .links-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
   max-width: 300px;
+  margin: 10px auto;
 }
 
 #portfolioContainer {
@@ -57,45 +101,98 @@ nav {
   display: flex;
   flex-direction: column;
 }
+.project h4 {margin: 0 auto;}
+.projects .fa-github-square {color: black;}
 .project {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   margin: 10px auto;
+  align-items: center;
 }
-.project-info {text-align: center; margin: 0 auto;}
+.tech,
+.links {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 5px;
+}
+.project-info {
+  text-align: center; 
+  margin: 0 auto;  
+}
+.tech .fab,
+.project-info a {padding: 10px;}
+
 .project img {
-  border: 1px solid black;
+  
   width: 100%;
   padding: 25px;
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 #aboutContainer {
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 }
-.bio {border: 1px solid black;}
+.bio {padding: 10px;}
+.bio h2 {text-align: center;}
+.bio p {text-align: left;}
 .bio-pic {
-  border: 1px solid black;
-  padding: 50px;
   max-width: 400px;
   margin: 10px auto;
+  padding: 10px;
   }
+.bio-pic img {width: 100%}
+footer {color: white; padding-bottom: 30px;}
+footer h4 {color: white; font-size: 0.9rem;}
 
-footer {text-align: center; padding-bottom: 30px}
   @media (min-width: 500px)  {
     header {top: 0; bottom: unset}
-    .projects,
-    #aboutContainer {flex-direction: row;}
-    .bio,.bio-pic {width: 50%}
     footer {padding-bottom: 0}
 
   }
 
   @media (min-width: 768px) {
-    
+    #aboutContainer {flex-direction: row;}
     .projects {flex-direction: column;}
     .project {
       flex-direction: row;
@@ -105,4 +202,8 @@ footer {text-align: center; padding-bottom: 30px}
       flex-direction: row-reverse;
     }
     .project img {width: 50%}
+    .bio {padding: 20px;}
+    .bio,.bio-pic {width: 50%}
+    
+    
   }
