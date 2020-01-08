@@ -3,17 +3,31 @@ body,html {
   position: relative;
   box-sizing: inherit;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {background-color: #010A26}
-h1,h2,h3,h4,h5,h6 {font-family: 'Proza Libre', sans-serif; color: #00279E}
+h1,h2,h3,h4,h5,h6 {font-family: 'Proza Libre', sans-serif; color: #00279E; text-align: center;}
+h2 {font-size: 1.4rem;}
+p {text-align: left;}
 p,a {font-family: 'Open Sans', sans-serif;}
 a {color: black; text-decoration: none;}
+.fab,.fas {font-size: 1.3rem; transition: color 0.4s linear}
+.fa-linkedin,
+.fa-github-square,
+.fa-codepen,
+.fa-envelope {color: white;}
+.fa-linkedin:hover {color: #0077b5;}
+.fa-github-square:hover {color: #31c754;}
+.fa-codepen:hover {color: #b268de;}
+.fa-envelope:hover {color: #c04338}
 
 section {
   background: white;
-  width: 100%; 
-  margin: 10px auto; 
+  width: 100%;
+  max-width: 1000px;
+  margin: 25px auto; 
+  border-radius: 5px;
   padding: 10px}
 
 
@@ -35,7 +49,9 @@ nav a {
   color: white; 
   font-weight: bold;
   letter-spacing: 2px;
+  transition: color 0.4s linear;
   }
+nav a:hover {color: #010A26}
 
 #heroContainer {
   display: flex;
@@ -48,8 +64,26 @@ nav a {
   width: 100%;
   height: 100vh;
   min-height: 400px;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  -webkit-animation: gradientBG 10s ease infinite;
+	animation: gradientBG 10s ease infinite;
+  background-size: 400% 400%;
 }
-#heroContainer h1 {margin-bottom: 0; font-size: 2rem}
+ 
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#heroContainer h1 {color:white; margin-bottom: 0; font-size: 2rem}
+#heroContainer h2 {color: white;}
 .links-container {
   display: flex;
   justify-content: space-between;
@@ -67,15 +101,25 @@ nav a {
   display: flex;
   flex-direction: column;
 }
+.project h4 {margin: 0 auto;}
+.projects .fa-github-square {color: black;}
 .project {
   display: flex;
   flex-direction: column;
   margin: 10px auto;
+  align-items: center;
+}
+.tech,
+.links {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 5px;
 }
 .project-info {
   text-align: center; 
   margin: 0 auto;  
 }
+.tech .fab,
 .project-info a {padding: 10px;}
 
 .project img {
@@ -127,31 +171,28 @@ nav a {
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 }
-
+.bio {padding: 10px;}
+.bio h2 {text-align: center;}
+.bio p {text-align: left;}
 .bio-pic {
   max-width: 400px;
   margin: 10px auto;
+  padding: 10px;
   }
-
-footer {
-  color: white;
-  text-align: center; 
-  padding-bottom: 30px;
-}
+.bio-pic img {width: 100%}
+footer {color: white; padding-bottom: 30px;}
+footer h4 {color: white; font-size: 0.9rem;}
 
   @media (min-width: 500px)  {
     header {top: 0; bottom: unset}
-    .projects,
-    #aboutContainer {flex-direction: row;}
-    .bio,.bio-pic {width: 50%}
     footer {padding-bottom: 0}
 
   }
 
   @media (min-width: 768px) {
-    
+    #aboutContainer {flex-direction: row;}
     .projects {flex-direction: column;}
     .project {
       flex-direction: row;
@@ -161,4 +202,8 @@ footer {
       flex-direction: row-reverse;
     }
     .project img {width: 50%}
+    .bio {padding: 20px;}
+    .bio,.bio-pic {width: 50%}
+    
+    
   }
