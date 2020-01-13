@@ -25,10 +25,8 @@ const projectSTORE = [
 
 function displayProjects(obj) {
   Object.keys(obj).forEach(function(item){
-    console.log(item); // key
-	  console.log(projectSTORE[item]["img"]);
     portfolioContainer.append(`<div class="project">
-            <img src="${obj[item]["img"]}" alt="project img">
+            <img src="${obj[item]["img"]}" alt="${obj[item]["title"]}">
             <div class="project-info">
             <h3>${obj[item]["title"]}</h3>
             <p>${obj[item]["info"]}</p>
