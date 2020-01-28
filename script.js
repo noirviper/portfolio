@@ -6,7 +6,7 @@ const projectSTORE = [
   {
     "img" : "img/Game-Finder.png",
     "title" : "Game Finder",
-    "info" : "I built a game recommendation app using the TasteDive API. This app allows a user to enter a video game title or genre to get recommendations for new games to play",
+    "info" : "I built a game recommendation app using the TasteDive API. This app allows a user to enter a video game title or genre to get recommendations for new games to play.",
     "tech" : ["fa-html5", "fa-css3-alt", "fa-js-square"],
     "links" : ["https://noirviper.github.io/Game-Finder/", "https://github.com/noirviper/Game-Finder/blob/master/README.md"]
 
