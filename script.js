@@ -4,7 +4,7 @@ let portfolioContainer = $(".projects");
 
 const projectSTORE = [
   {
-    "img" : "img/Game-Finder.png",
+    "img" : "img/movie_finder.jpg",
     "title" : "Movie Finder",
     "info" : "I built a movie recommendation app using the TasteDive API. This app allows a user to enter a movie title or genre to get recommendations for new movies to watch.",
     "tech" : ["fa-html5", "fa-css3-alt", "fa-js-square"],
